@@ -2,6 +2,8 @@
 
 * {
   font-family: "IM Fell DW Pica SC", serif;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 body {
@@ -124,4 +126,65 @@ footer {
 
 .active {
   background-color: #d3282e;
+}
+
+@media screen and (min-width: 1200px) {
+  .head ul {
+    font-size: 30px;
+  }
+  .head marquee {
+    margin-top: 70px;
+    font-size: 40px;
+  }
+
+  .pfp {
+    max-width: 250px;
+    border-radius: 100%;
+    border: 2px solid white;
+  }
+
+  .pfp:hover {
+    animation-name: enlarge;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  .pfp:not(:hover) {
+    animation-name: shrink;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes enlarge {
+    from {
+      max-width: 250px;
+      border-radius: 100%;
+      border: 2px solid white;
+    }
+    to {
+      max-width: 400px;
+      border-radius: 0;
+      border: 2px solid white;
+    }
+  }
+
+  @keyframes shrink {
+    from {
+      max-width: 400px;
+      border-radius: 0;
+      border: none;
+    }
+    to {
+      max-width: 250px;
+      border-radius: 100%;
+      border: 2px solid white;
+    }
+  }
+  .body p {
+    font-size: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
 }
